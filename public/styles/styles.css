@@ -1,0 +1,1293 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: "Spartan";
+  --vdblue: #1b1d23;
+  --dgrey: #60636d;
+  --mgrey: #7d828f;
+  --lgrey: #c8ccd8;
+  --vlgrey: #eeeff4;
+  --red: #df5656;
+  font-size: 15px;
+  color: var(--dgrey);
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=button], input[type=email], input[type=submit] {
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+border-radius: none;
+}
+
+h1.large {
+  font-size: 13.5vw;
+  letter-spacing: -2px;
+  color: var(--lgrey);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1368px) {
+  h1.large {
+    font-size: 200px;
+  }
+}
+
+h1.small {
+  font-size: 80px;
+  letter-spacing: -2px;
+  color: var(--vdblue);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 56px;
+  letter-spacing: -2px;
+  color: var(--vdblue);
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  color: var(--vdblue);
+  font-weight: bold;
+}
+
+.btn {
+  background: var(--vdblue);
+  color: white;
+  display: grid;
+  place-items: center;
+  height: 80px;
+  cursor: pointer;
+}
+
+.btn-icon {
+  width: 80px;
+}
+
+.btn-txt {
+  width: 18rem;
+}
+
+.btn:hover {
+  background: var(--dgrey);
+}
+
+.btn:active {
+  background: var(--lgrey);
+}
+
+.inactive-btn {
+  background: white;
+  color: var(--dgrey);
+  border: 0.5px solid var(--lgrey);
+}
+
+p {
+  line-height: 25px;
+}
+
+.trans-layer {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+/* Header */
+header {
+  padding: 1.5rem 10vw;
+  position: fixed;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background: white;
+  z-index: 3;
+  width: 100%;
+  top: 0;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-rows: 1fr 20rem;
+  grid-gap: 2rem;
+  justify-items: center;
+  left: 4vw;
+}
+
+.title p {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.5rem;
+  cursor: default;
+}
+
+.line {
+  width: 1px;
+  height: 6rem;
+  background: var(--dgrey);
+}
+
+header ul {
+  margin-left: 6rem;
+}
+
+header ul li {
+  display: inline-block;
+  margin-right: 2rem;
+  position: relative;
+}
+
+header ul li a:hover {
+  color: var(--vdblue);
+  font-weight: bold;
+}
+
+header ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  right: 0;
+  height: 2px;
+  bottom: -4px;
+  display: block;
+  background: var(--vdblue);
+  transition: width 0.5s linear;
+}
+
+header ul li a:hover::after {
+  width: 50%;
+}
+
+/* Sections */
+section {
+  margin: 6rem 10vw 2rem 10vw;
+  position: relative;
+  min-height: 500px;
+}
+
+/* Homepage - Hero Section */
+#home-hero {
+  background-image: url("../assets/home/desktop/image-hero-paramour.jpg");
+  background-size: cover;
+}
+
+#home-hero .trans-layer {
+  display: grid;
+  padding: 2rem;
+  min-height: 500px;
+}
+
+#home-hero .btn-icon {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+}
+
+#home-hero .btn-icon:nth-of-type(1) {
+  left: -80px;
+}
+
+#home-hero .btn-icon:nth-of-type(2) {
+  left: 0px;
+}
+
+#home-hero .btn-icon:nth-of-type(3) {
+  left: 80px;
+}
+
+#home-hero .btn-icon:nth-of-type(4) {
+  left: 160px;
+}
+
+#home-hero h1 {
+  color: white;
+  align-self: end;
+}
+
+#home-hero p {
+  color: white;
+  width: 75%;
+  align-self: center;
+}
+
+/* Welcome */
+#welcome {
+  display: grid;
+  grid-template-rows: 5rem 1fr repeat(3, auto);
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 2rem;
+  grid-template-areas:
+    ". image"
+    "head image"
+    "p1 image"
+    "p2 image"
+    "p3 image";
+}
+
+#welcome h1 {
+  position: absolute;
+  z-index: 1;
+}
+
+#welcome-image {
+  height: 100%;
+  width: 100%;
+  grid-area: image;
+  background: url("../assets/home/desktop/image-welcome.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#welcome h2 {
+  grid-area: head;
+  z-index: 1;
+}
+
+#welcome p {
+  width: 90%;
+}
+
+#welcome p:nth-of-type(1) {
+  grid-area: p1;
+}
+
+#welcome p:nth-of-type(2) {
+  grid-area: p2;
+}
+
+#welcome p:nth-of-type(3) {
+  grid-area: p3;
+}
+
+/* Small Team Big Ideas */
+#small-team {
+  background: url("../assets/home/desktop/image-small-team.jpg");
+  background-size: cover;
+}
+
+#small-team .trans-layer {
+  padding: 2rem;
+  display: grid;
+  grid-gap: 2rem;
+  min-height: 500px;
+}
+
+#small-team h2 {
+  color: white;
+  align-self: end;
+}
+
+/* Featured Projects */
+#featured {
+  display: grid;
+  grid-template-rows: 6rem 560px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  grid-template-areas:
+    "title . button"
+    "feat1 feat2 feat3";
+}
+
+#featured h2 {
+  grid-area: title;
+}
+
+#featured .btn {
+  grid-area: button;
+  justify-self: end;
+}
+
+#feature-1 {
+  grid-area: feat1;
+  background: url("../assets/portfolio/desktop/image-del-sol.jpg");
+  background-size: cover;
+}
+
+#feature-2 {
+  grid-area: feat2;
+  background: url("../assets/portfolio/desktop/image-228b.jpg");
+  background-size: cover;
+}
+
+#feature-3 {
+  grid-area: feat3;
+  background: url("../assets/portfolio/desktop/image-prototype.jpg");
+  background-size: cover;
+}
+
+.featured-project .trans-layer-proj {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  padding: 2rem;
+  grid-gap: 1rem;
+}
+
+.featured-project h1 {
+  text-align: right;
+}
+
+.featured-project h3,
+.featured-project a {
+  color: white;
+}
+
+.trans-layer-proj {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+footer {
+  margin-top: 6rem;
+  height: 150px;
+  padding: 0 10vw;
+  display: grid;
+  grid-template-columns: 150px 1fr 9rem 9rem;
+}
+
+.white-logo {
+  background: black;
+  width: 150px;
+  display: grid;
+  place-items: center;
+}
+
+.navbar-bottom {
+  background: var(--lgrey);
+  height: 100%;
+  grid-column: 2/4;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+}
+
+.navbar-bottom li {
+  display: inline-block;
+  margin-left: 4rem;
+  align-self: center;
+}
+
+.navbar-bottom li:hover {
+  font-weight: bold;
+}
+
+footer .btn {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  align-self: center;
+}
+
+/* Portfolio */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 500px);
+  grid-gap: 1rem;
+}
+
+.project .trans-layer-proj {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-gap: 1rem;
+}
+
+.project h3 {
+  align-self: end;
+  color: white;
+}
+
+.project p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#project-1 {
+  background: url("../assets/portfolio/desktop/image-seraph.jpg");
+  background-size: cover;
+}
+
+#project-2 {
+  background: url("../assets/portfolio/desktop/image-eebox.jpg");
+  background-size: cover;
+}
+
+#project-3 {
+  background: url("../assets/portfolio/desktop/image-federal.jpg");
+  background-size: cover;
+}
+
+#project-4 {
+  background: url("../assets/portfolio/desktop/image-del-sol.jpg");
+  background-size: cover;
+}
+
+#project-5 {
+  background: url("../assets/portfolio/desktop/image-prototype.jpg");
+  background-size: cover;
+}
+
+#project-6 {
+  background: url("../assets/portfolio/desktop/image-228b.jpg");
+  background-size: cover;
+}
+
+#project-7 {
+  background: url("../assets/portfolio/desktop/image-edelweiss.jpg");
+  background-size: cover;
+}
+
+#project-8 {
+  background: url("../assets/portfolio/desktop/image-netcry.jpg");
+  background-size: cover;
+}
+
+#project-9 {
+  background: url("../assets/portfolio/desktop/image-hypers.jpg");
+  background-size: cover;
+}
+
+#project-10 {
+  background: url("../assets/portfolio/desktop/image-sxiv.jpg");
+  background-size: cover;
+}
+
+#project-11 {
+  background: url("../assets/portfolio/desktop/image-trinity.jpg");
+  background-size: cover;
+}
+
+#project-12 {
+  background: url("../assets/portfolio/desktop/image-paramour.jpg");
+  background-size: cover;
+}
+
+/* About */
+.offset-section {
+  display: grid;
+  grid-template-columns: 1fr 6rem 50%;
+  grid-template-rows: 1fr 2fr;
+}
+
+.offset-section h1 {
+  position: absolute;
+  top: 33%;
+  z-index: -1;
+  right: 0;
+}
+
+.offset-image {
+  grid-row: 1/3;
+  grid-column: 1/3;
+}
+
+#about-image {
+  background: url("../assets/about/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.copy {
+  background: white;
+  z-index: 1;
+  grid-row: 2/3;
+  grid-column: 2/4;
+  display: grid;
+  place-items: center;
+  padding: 6rem;
+  grid-gap: 2rem;
+}
+
+/* Our Heritage */
+#heritage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr repeat(3, auto);
+  grid-gap: 2rem;
+  grid-template-areas:
+    "head image"
+    "p1 image"
+    "p2 image"
+    "p3 image";
+}
+
+#heritage p:nth-of-type(1) {
+  grid-area: p1;
+}
+
+#heritage p:nth-of-type(2) {
+  grid-area: p2;
+}
+
+#heritage p:nth-of-type(3) {
+  grid-area: p3;
+}
+
+#heritage h2 {
+  align-self: center;
+}
+
+#heritage-image {
+  background: url("../assets/about/desktop/image-heritage.jpg");
+  grid-area: image;
+  background-size: cover;
+}
+
+/* Leader */
+#leaders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 4rem;
+  grid-template-areas:
+    "title jake thompson"
+    "title jackson maria ";
+}
+
+#leaders h2 {
+  grid-area: title;
+}
+
+.leader:nth-of-type(1) {
+  grid-area: jake;
+}
+
+.leader:nth-of-type(2) {
+  grid-area: thompson;
+}
+
+.leader:nth-of-type(3) {
+  grid-area: jackson;
+}
+
+.leader:nth-of-type(4) {
+  grid-area: maria;
+}
+
+.leader {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  grid-gap: 1.5rem;
+  padding: 0.5rem;
+  height: 400px;
+}
+
+#jake-richards {
+  background: url("../assets/about/desktop/avatar-jake.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#thompson-smith {
+  background: url("../assets/about/desktop/avatar-thompson.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#jackson-rourke {
+  background: url("../assets/about/desktop/avatar-jackson.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#maria-simpson {
+  background: url("../assets/about/desktop/avatar-maria.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.leader-trans-layer {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
+  align-items: center;
+}
+
+.leader-trans-layer a:nth-of-type(1) {
+  justify-self: end;
+}
+
+.leader-trans-layer a {
+  display: none;
+}
+
+.leader-trans-layer:hover a {
+  display: block;
+}
+
+.leader-trans-layer:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.social-icon-tablet {
+  display: none;
+}
+
+/* Contact Form */
+#contact-image {
+  background: url("../assets/contact/desktop/image-hero.jpg");
+  background-size: cover;
+}
+
+#details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  min-height: 100px;
+}
+
+.office-address {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr repeat(3, auto);
+  grid-gap: 0.5rem;
+}
+
+.office-address h3 {
+  grid-column: 1/3;
+}
+
+#map {
+  background: url("../assets/contact/desktop/image-map.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#connect {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid var(--dgrey);
+  color: var(--vdblue);
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 2px solid var(--vdblue);
+}
+
+#contact-form {
+  display: grid;
+  grid-template-rows: repeat(2, auto) 1fr 80px;
+}
+
+.float-container {
+  position: relative;
+}
+
+.float-container label {
+  position: absolute;
+  top: 2.25rem;
+  right: 1rem;
+  font-size: 12px;
+}
+
+textarea {
+  height: 100%;
+  resize: none;
+}
+
+#contact-form .btn {
+  justify-self: end;
+}
+
+label {
+  color: transparent;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+  header {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  header ul {
+    justify-self: center;
+    margin-left: 0;
+  }
+
+  #home-hero .trans-layer {
+    min-height: 720px;
+    padding: 4rem;
+  }
+
+  #home-hero .trans-layer button {
+    display: none;
+  }
+
+  #welcome,
+  #heritage {
+    grid-template-columns: 1fr;
+  }
+
+  #welcome h2,
+  #heritage h2 {
+    width: 60%;
+  }
+
+  #welcome p,
+  #heritage p {
+    width: 50%;
+  }
+
+  #welcome p:nth-of-type(2),
+  #heritage p:nth-of-type(2) {
+    justify-self: center;
+  }
+
+  #welcome p:nth-of-type(3),
+  #heritage p:nth-of-type(3) {
+    justify-self: end;
+  }
+
+  #welcome-image,
+  #heritage-image {
+    display: none;
+  }
+
+  #featured {
+    grid-template-rows: 0.5fr repeat(3, 1fr);
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+      "title button"
+      "feat1 feat1"
+      "feat2 feat2"
+      "feat3 feat3";
+  }
+
+  #feature-1 {
+    background: url("../assets/portfolio/tablet/image-del-sol.jpg");
+    background-size: cover;
+  }
+
+  #feature-2 {
+    background: url("../assets/portfolio/tablet/image-228b.jpg");
+    background-size: cover;
+  }
+
+  #feature-3 {
+    background: url("../assets/portfolio/tablet/image-prototype.jpg");
+    background-size: cover;
+  }
+
+  footer {
+    padding: 0;
+    margin-top: 6rem;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 120px 1fr 9rem 9rem;
+  }
+
+  .white-logo {
+    width: 120px;
+  }
+
+  .navbar-bottom li {
+    margin-left: 3rem;
+  }
+
+  #projects {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 240px);
+    grid-gap: 2rem;
+  }
+
+  #project-1 {
+    background: url("../assets/portfolio/tablet/image-seraph.jpg");
+    background-size: cover;
+  }
+
+  #project-2 {
+    background: url("../assets/portfolio/tablet/image-eebox.jpg");
+    background-size: cover;
+  }
+
+  #project-3 {
+    background: url("../assets/portfolio/tablet/image-federal.jpg");
+    background-size: cover;
+  }
+
+  #project-4 {
+    background: url("../assets/portfolio/tablet/image-del-sol.jpg");
+    background-size: cover;
+  }
+
+  #project-5 {
+    background: url("../assets/portfolio/tablet/image-prototype.jpg");
+    background-size: cover;
+  }
+
+  #project-6 {
+    background: url("../assets/portfolio/tablet/image-228b.jpg");
+    background-size: cover;
+  }
+
+  #project-7 {
+    background: url("../assets/portfolio/tablet/image-edelweiss.jpg");
+    background-size: cover;
+  }
+
+  #project-8 {
+    background: url("../assets/portfolio/tablet/image-netcry.jpg");
+    background-size: cover;
+  }
+
+  #project-9 {
+    background: url("../assets/portfolio/tablet/image-hypers.jpg");
+    background-size: cover;
+  }
+
+  #project-10 {
+    background: url("../assets/portfolio/tablet/image-sxiv.jpg");
+    background-size: cover;
+  }
+
+  #project-11 {
+    background: url("../assets/portfolio/tablet/image-trinity.jpg");
+    background-size: cover;
+  }
+
+  #project-12 {
+    background: url("../assets/portfolio/tablet/image-paramour.jpg");
+    background-size: cover;
+  }
+
+  .offset-section {
+    min-height: 720px;
+  }
+
+  .offset-section h1 {
+    position: absolute;
+    top: 25%;
+    z-index: -1;
+    right: 0;
+  }
+
+  .offset-image {
+    grid-column: 1/4;
+  }
+
+  .offset-section .copy {
+    padding: 2rem;
+  }
+
+  #about-image {
+    background: url("../assets/about/tablet/image-hero.jpg");
+    background-size: cover;
+  }
+
+  #leaders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr 1fr;
+    grid-gap: 4rem;
+    grid-template-areas:
+      "title title"
+      "jake thompson"
+      "jackson maria ";
+  }
+
+  .leader {
+    grid-gap: 1rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto auto auto;
+  }
+
+  .leader div {
+    grid-row: 1/2;
+    grid-column: 1/3;
+  }
+
+  .leader h3 {
+    grid-column: 1/3;
+  }
+
+  .leader p {
+    grid-column: 1/3;
+  }
+
+  .leader-trans-layer {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  #details {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+  }
+
+  #map {
+    background: url("../assets/contact/tablet/image-map.png");
+    background-size: cover;
+  }
+
+  #connect {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  #contact-image {
+    background: url("../assets/contact/tablet/image-hero.jpg");
+    background-size: cover;
+  }
+
+  .social-icon-tablet {
+    display: block;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title {
+    display: none;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  section {
+    margin: 6rem 0vw 2rem 0vw;
+    position: relative;
+  }
+
+  h1.large {
+    display: none;
+  }
+
+  h1.small {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .btn-txt {
+    width: 100%;
+  }
+
+  #home-hero .trans-layer {
+    padding: 10vw;
+  }
+
+  #home-hero p {
+    width: 100%;
+  }
+
+  #welcome {
+    padding: 10vw;
+  }
+
+  #welcome p {
+    width: 100%;
+  }
+
+  #small-team {
+    background: url("../assets/home/mobile/image-small-team.jpg");
+    background-size: center;
+  }
+
+  #featured {
+    display: grid;
+    padding: 10vw;
+    grid-template-rows: 6rem repeat(3, 240px) auto;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+      "title"
+      "feat1"
+      "feat2"
+      "feat3"
+      "button";
+  }
+
+  #feature-1 {
+    background: url("../assets/portfolio/mobile/image-del-sol.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  #feature-2 {
+    background: url("../assets/portfolio/mobile/image-228b.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  #feature-3 {
+    background: url("../assets/portfolio/mobile/image-prototype.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .featured-project .trans-layer-proj {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 2rem;
+    grid-gap: 1rem;
+  }
+
+  .featured-project h3 {
+    align-self: end;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr auto;
+    height: 400px;
+    background: var(--lgrey);
+    padding: 10vw;
+    position: relative;
+  }
+
+  .navbar-bottom {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    justify-self: center;
+  }
+
+  .navbar-bottom li {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  footer .btn {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    justify-self: center;
+  }
+
+  .white-logo {
+    height: 120px;
+    position: absolute;
+    top: -60px;
+    left: 50vw;
+    transform: translate(-50%);
+  }
+
+  #projects {
+    padding: 10vw;
+  }
+
+  #project-1 {
+    background: url("../assets/portfolio/mobile/image-seraph.jpg");
+    background-size: cover;
+  }
+
+  #project-2 {
+    background: url("../assets/portfolio/mobile/image-eebox.jpg");
+    background-size: cover;
+  }
+
+  #project-3 {
+    background: url("../assets/portfolio/mobile/image-federal.jpg");
+    background-size: cover;
+  }
+
+  #project-4 {
+    background: url("../assets/portfolio/mobile/image-del-sol.jpg");
+    background-size: cover;
+  }
+
+  #project-5 {
+    background: url("../assets/portfolio/mobile/image-prototype.jpg");
+    background-size: cover;
+  }
+
+  #project-6 {
+    background: url("../assets/portfolio/mobile/image-228b.jpg");
+    background-size: cover;
+  }
+
+  #project-7 {
+    background: url("../assets/portfolio/mobile/image-edelweiss.jpg");
+    background-size: cover;
+  }
+
+  #project-8 {
+    background: url("../assets/portfolio/mobile/image-netcry.jpg");
+    background-size: cover;
+  }
+
+  #project-9 {
+    background: url("../assets/portfolio/mobile/image-hypers.jpg");
+    background-size: cover;
+  }
+
+  #project-10 {
+    background: url("../assets/portfolio/mobile/image-sxiv.jpg");
+    background-size: cover;
+  }
+
+  #project-11 {
+    background: url("../assets/portfolio/mobile/image-trinity.jpg");
+    background-size: cover;
+  }
+
+  #project-12 {
+    background: url("../assets/portfolio/mobile/image-paramour.jpg");
+    background-size: cover;
+  }
+
+  .offset-section {
+    grid-template-columns: 1fr 10vw;
+    grid-template-rows: 1fr 10vw 50%;
+  }
+
+  .offset-image {
+    grid-row: 1/3;
+    grid-column: 1/3;
+  }
+
+  .offset-section .copy {
+    grid-column: 1/2;
+    grid-row: 2/4;
+    padding-right: 0;
+  }
+
+  #about-image {
+    background: url("../assets/about/mobile/image-hero.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  #heritage {
+    padding: 0 10vw;
+  }
+
+  #heritage p {
+    width: 100%;
+  }
+
+  #leaders {
+    padding: 0 10vw;
+  }
+
+  #leaders {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(4, 1fr);
+    grid-gap: 4rem;
+    grid-template-areas:
+      "title"
+      "jake"
+      "thompson"
+      "jackson"
+      "maria ";
+  }
+
+  #details {
+    padding: 0 10vw;
+  }
+
+  #contact-image {
+    background: url("../assets/contact/mobile/image-hero.jpg");
+    background-size: cover;
+  }
+
+  #map {
+    background: url("../assets/contact/mobile/image-map.png");
+    background-size: cover;
+  }
+
+  #connect {
+    padding: 0 10vw;
+  }
+
+  /* Mobile Navigation */
+  .menu-btn {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background: url("../assets/icons/icon-hamburger.svg");
+    background-size: cover;
+    align-self: center;
+    justify-self: end;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    background: url("../assets/icons/icon-close.svg");
+    background-size: cover;
+  }
+
+  .dropdown {
+    position: fixed;
+    top: 6rem;
+    right: 10vw;
+    width: 80vw;
+    height: 90vw;
+    background: var(--vdblue);
+    padding: 10vw;
+    display: grid;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .dropdown li {
+    font-size: 18px;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .dropdown li a {
+    color: white !important;
+  }
+
+  .float-container label {
+    position: absolute;
+    top: 3.5rem;
+    left: 2.5rem;
+    font-size: 12px;
+  }
+
+  #message-label {
+    top: 6rem;
+  }
+}
+
+/* Contact Form Validation */
+.invalid-label {
+  color: var(--red);
+}
+
+.invalid-border {
+  border-bottom: 2px solid var(--red);
+}
